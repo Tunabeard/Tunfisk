@@ -2,10 +2,9 @@ from functions_file import digits_to_truefalse
 import os
 import time
 import datetime
-import colored
-from colored import stylize
 
-construction_symbol = "\u25AE"
+construction_symbol = "\u2B1C"
+space_symbol = "\u2B1B"
 are_delimeters_active_now = False
 
 while True:
@@ -34,12 +33,9 @@ while True:
         N = 0
         for item in line:
             if item == True:
-                if N != 12 and N != 26:
-                    print(stylize(construction_symbol, colored.fg(45),), end="")
-                else:
-                    print(stylize(construction_symbol, colored.fg(226),), end="")
+                print(construction_symbol, end="")
             else:
-                print(stylize(construction_symbol, colored.fg(234),), end="")
+                print(space_symbol, end="")
             N += 1
         print()
     are_delimeters_active_now = not are_delimeters_active_now
